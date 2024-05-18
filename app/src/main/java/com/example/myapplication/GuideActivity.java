@@ -34,28 +34,5 @@ public class GuideActivity extends AppCompatActivity {
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int selected = item.getItemId();
-
-        if (selected == R.id.menuAbout) {
-            Intent intent = new Intent(GuideActivity.this, AboutActivity.class);
-            startActivity(intent);
-        } else if (selected == R.id.menuGuide) {
-            Intent intent = new Intent(GuideActivity.this, GuideActivity.class);
-            startActivity(intent);
-        } else if (selected == R.id.menuSettings) {
-            Intent intent = new Intent(GuideActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

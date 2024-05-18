@@ -41,30 +41,21 @@ public class AboutActivity extends AppCompatActivity  {
             }
         });
 
-
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int selected = item.getItemId();
-
-        if (selected == R.id.menuAbout) {
-            Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
-            startActivity(intent);
-        } else if (selected == R.id.menuGuide) {
-            Intent intent = new Intent(AboutActivity.this, GuideActivity.class);
-            startActivity(intent);
-        } else if (selected == R.id.menuSettings) {
-            Intent intent = new Intent(AboutActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
+        // Set up GitHub button
+        Button btnGithub = findViewById(R.id.btnGithub);
+        btnGithub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace with your GitHub URL
+                String url = "https://github.com/Arfiq75/Arfiq.Calculator";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
 
     }
+
+
 }

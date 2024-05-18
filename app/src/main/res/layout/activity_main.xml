@@ -34,6 +34,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <RadioGroup
+        android:id="@+id/radioGroupRebate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUnitsUsed">
+
+        <RadioButton
+            android:id="@+id/rbApplyRebate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply Rebate" />
+
+        <RadioButton
+            android:id="@+id/rbDoNotApplyRebate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do Not Apply Rebate" />
+    </RadioGroup>
+
     <EditText
         android:id="@+id/etRebate"
         android:layout_width="0dp"
@@ -45,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUnitsUsed" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupRebate" />
 
     <Button
         android:id="@+id/btnCalculate"
@@ -79,6 +101,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGuide" />
 
+    <TextView
+        android:id="@+id/tvAdditionalOutput"
+        android:layout_width="217dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:text="Total Before Rebate: RM 0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalCharges" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="411dp"
@@ -106,7 +139,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.069"
         app:srcCompat="@drawable/v1" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
