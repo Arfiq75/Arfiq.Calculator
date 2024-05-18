@@ -83,9 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (selected == R.id.menuGuide) {
             Intent intent = new Intent(MainActivity.this, GuideActivity.class);
             startActivity(intent);
-        } else if (selected == R.id.menuSettings) {
-            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(intent);
+        } else if (selected == R.id.menuExit) {
+            finishAffinity(); // This closes all the activities in the stack and exits the application
         }
         return super.onOptionsItemSelected(item);
     }

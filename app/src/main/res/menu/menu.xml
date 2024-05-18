@@ -9,6 +9,6 @@
         android:id="@+id/menuGuide"
         android:title="Guide" />
     <item
-        android:id="@+id/menuSettings"
-        android:title="Settings" />
+        android:id="@+id/menuExit"
+        android:title="Exit Application" />
 </menu>

@@ -97,8 +97,8 @@
 
         <TextView
             android:id="@+id/editTextText5"
-            android:layout_width="406dp"
-            android:layout_height="23dp"
+            android:layout_width="376dp"
+            android:layout_height="33dp"
             android:ems="10"
             android:text="Copyright by @ 2024 Voltter Sdn Bhd"
             android:textColor="@android:color/black"
@@ -108,7 +108,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.99"
+            app:layout_constraintVertical_bias="0.992"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
