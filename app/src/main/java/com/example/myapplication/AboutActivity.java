@@ -1,16 +1,23 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.net.Uri;
 
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,16 +29,42 @@ public class AboutActivity extends AppCompatActivity {
         tvDeveloperInfo.setText("Developed by: ARMI AFIQ NAJMI BIN AZMI");
 
 
-        // Set click listener for the website link
-        TextView tvWebsite = findViewById(R.id.tvWebsite);
-        tvWebsite.setOnClickListener(new View.OnClickListener() {
+
+
+        Button btnBackToMain = findViewById(R.id.btnBackToMain);
+        btnBackToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace "https://example.com" with your actual website URL
-                String url = "https://example.com";
-                // Open the website in a browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish(); // Optional: Finish the SettingsActivity if you don't want to keep it in the back stack
             }
         });
+
+
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int selected = item.getItemId();
+
+        if (selected == R.id.menuAbout) {
+            Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
+            startActivity(intent);
+        } else if (selected == R.id.menuGuide) {
+            Intent intent = new Intent(AboutActivity.this, GuideActivity.class);
+            startActivity(intent);
+        } else if (selected == R.id.menuSettings) {
+            Intent intent = new Intent(AboutActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+
+
     }
 }

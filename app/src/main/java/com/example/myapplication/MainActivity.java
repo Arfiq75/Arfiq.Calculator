@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onOptionsItemSelected(item);
 
-
     }
 
     @Override
@@ -118,11 +117,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void openWebsite(View view) {
-        // Replace "https://example.com" with your actual website URL
-        String url = "https://example.com";
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
-    }
+
 }
