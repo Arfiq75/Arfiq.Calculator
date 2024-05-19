@@ -146,6 +146,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Display the result
             tvTotalCharges.setText("Total Charges: RM " + df.format(totalCharges));
             tvAdditionalOutput.setText("Total Before Rebate: RM " + df.format(totalBeforeRebate));
+
+
+            }
+        else if (view.getId() == R.id.btnGuide) {
+            // Navigate to Guide page
+            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+            startActivity(intent);
         }
     }
 }
