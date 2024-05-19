@@ -105,6 +105,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Parse input values to double
             double unitsUsed = Double.parseDouble(unitsUsedStr);
             double rebate = 0;
+            if (rbApplyRebate.isChecked()) {
+                rebate = Double.parseDouble(rebateStr);
+                if (rebate > 5) {
+                    Toast.makeText(this, "Rebate percentage cannot be more than 5%.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+
+            // Perform calculation based on provided logic
+            double totalCharges = 0;
+            if (unitsUsed <= 200) {
+                totalCharges = unitsUsed * 0.218;
+            } else if (unitsUsed <= 300) {
+                totalCharges = (200 * 0.218) + ((unitsUsed - 200) * 0.334);
+            } else if (unitsUsed <= 600) {
+                totalCharges = (200 * 0.218) + (100 * 0.334) + ((unitsUsed - 300) * 0.516);
+            } else {
+                totalCharges = (200 * 0.218) + (100 * 0.334) + (300 * 0.516) + ((unitsUsed - 600) * 0.546);
+            }
 
             // Check if rebate should be applied
             if (rbApplyRebate.isChecked()) {
@@ -117,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Calculate total charges
             double rate = 0.21; // Example rate per kWh
-            double totalCharges = unitsUsed * rate;
             double totalBeforeRebate = totalCharges;
 
             // Apply rebate if applicable
